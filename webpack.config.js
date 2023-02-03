@@ -1,9 +1,11 @@
 const path = require("path");
 const webpack = require("webpack");
+const zopfli = require("@gfx/zopfli");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 const webpackMode = process.env.NODE_ENV || "development";
 
@@ -43,7 +45,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg|webp|glb)$/i,
+        test: /\.(png|jpe?g|gif|svg|webp|glb|gltf|tif|)$/i,
         use: {
           loader: "file-loader",
           options: {
@@ -87,9 +89,14 @@ module.exports = {
     // 그대로 사용할 파일들이 없다면 CopyWebpackPlugin을 통째로 주석 처리 해주세요.
     new CopyWebpackPlugin({
       patterns: [
-        { from: "./src/main.css", to: "./main.css" },
+        { from: "./src/reset.css", to: "./reset.css" },
         { from: "./src/asset", to: "./asset" },
       ],
+    }),
+    new CompressionPlugin({
+      filename: "[path][base].gz",
+      test: /\.js$|\.css$|\.html$/,
+      algorithm: "gzip",
     }),
   ],
 };

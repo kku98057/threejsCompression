@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 1rem =10~18px */
+
+html {
+  font-size: calc(15px + 0.390625vw);
+  scroll-behavior: auto;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+}
+html::-webkit-scrollbar-thumb {
+  width: 0px;
+}
+html::-webkit-scrollbar-track {
+  width: 1px;
+}
+body {
+  font-family: "Luckiest Guy", cursive;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  color: #010101;
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+}
+img {
+  display: block;
+  width: 100%;
+}

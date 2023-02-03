@@ -1,0 +1,110 @@
+.webgl {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  font-size: 120px;
+  will-change: transform, scroll-position;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10rem 0;
+}
+.s2,
+.s3,
+.s4 {
+  height: 150vh;
+}
+
+.s2 .container,
+.s3 .container {
+  padding: 10rem 0;
+  max-width: 100%;
+}
+.column {
+  width: 50%;
+}
+.s2 .title,
+.s3 .title {
+  width: 50%;
+  height: 100%;
+  padding: 5rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.title_wrap {
+  margin-bottom: 10rem;
+}
+.dg.ac {
+  z-index: 234 !important;
+}
+.title h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fafafa;
+}
+.title h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fafafa;
+}
+.title p {
+  font-size: 1rem;
+  color: #fafafa;
+}
+header {
+  width: 100%;
+  position: fixed;
+  padding: 1rem 0;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: difference;
+}
+header ul {
+  display: flex;
+  gap: 15px;
+}
+header a {
+  color: #fafafa;
+  font-size: 0.8rem;
+}
+@media all and (max-width: 767px) {
+  .s2,
+  .s3,
+  .s4 {
+    height: 300vh;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  .s2 .title,
+  .s3 .title {
+    padding: 1rem;
+    width: 100%;
+  }
+  .column {
+    display: none;
+  }
+}
